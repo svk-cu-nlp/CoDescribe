@@ -17,7 +17,7 @@ pip install -r requirements.txt
 - Get an OpenAI [API Key](https://platform.openai.com/account/api-keys)
 - Add the API Key and Organization Key in [config file](src/config.py)
 ### 💻 Execution
-To Run the normal version of the app where user has to upload source codes
+To run the normal version of the app where user has to upload source codes
 ```bash
 streamlit run ./src/app.py
 ```
