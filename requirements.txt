@@ -1,0 +1,10 @@
+streamlit
+streamlit-chat
+langchain==0.0.165
+openai
+tiktoken
+unstructured
+tabulate
+pdf2image
+chromadb
+pybase64
