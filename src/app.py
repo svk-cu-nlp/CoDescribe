@@ -90,20 +90,20 @@ def ask_bot(input_text):
 
         if st.session_state['no_doc'] > 1:
             # st.write("document greater 1")
-            qa = ChatVectorDBChain.from_llm(ChatOpenAI(openai_api_key=OPENAI_API_KEY, temperature=0), docsearch, qa_prompt=prompt)
+            qa = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0), docsearch.as_retriever(), return_source_documents=False)
             
             #result = qa.run(input_text)
             #print(result)
             result = qa({"question": input_text, "chat_history": chat_history})
         else:
             # st.write("document 1")
-            qa = ChatVectorDBChain.from_llm(ChatOpenAI(openai_api_key=OPENAI_API_KEY, temperature=0), docsearch, qa_prompt=prompt, top_k_docs_for_context=1)
+            qa = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0), docsearch.as_retriever(), return_source_documents=False)
             
             #result = qa.run(input_text)
             #print(result)
             result = qa({"question": input_text, "chat_history": chat_history})
     except Exception as e:
-        qa = ChatVectorDBChain.from_llm(ChatOpenAI(openai_api_key=OPENAI_API_KEY, temperature=0), docsearch, qa_prompt=prompt, top_k_docs_for_context=1)
+        qa = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0), docsearch.as_retriever(), return_source_documents=False)
         result = qa({"question": input_text, "chat_history": chat_history})
 
     
