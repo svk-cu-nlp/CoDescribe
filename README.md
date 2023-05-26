@@ -1,6 +1,10 @@
 # An AI-based Query-Answering Tool for Code Documentation and Summarization
 
 
+<h2 align="center"> Tool Demo </h2>
+<video src="https://github.com/svk-cu-nlp/CoDescribe/assets/96056131/be7313ab-48f8-4626-9248-38875479159f"></video>
+
+
 ## 🔗 Features
 - Code explanation summary generation.
 - Customized documentation generation of source code.
